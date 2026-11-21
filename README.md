@@ -54,10 +54,10 @@ O **NutrIA** é uma aplicação web para gerenciamento e acompanhamento nutricio
 
 | Destaque | Descrição |
 | --- | --- |
-| 🤖 **Análise nutricional por IA** | A partir da descrição da refeição, estima calorias, proteínas, carboidratos, gorduras, açúcares, fibras e sódio. |
-| 💡 **Sugestão inteligente** | Na refeição registrada, a IA sugere uma alternativa da mesma categoria, levando em conta o objetivo do usuário. A sugestão não altera o registro original. |
-| ⭐ **Refeições favoritas** | Refeições salvas podem ser reutilizadas sem nova análise da IA. |
-| 📷 **Código de barras** | Consulta de produtos na base Open Food Facts para registrar seus dados nutricionais. |
+| **Análise nutricional por IA** | A partir da descrição da refeição, estima calorias, proteínas, carboidratos, gorduras, açúcares, fibras e sódio. |
+| **Sugestão inteligente** | Na refeição registrada, a IA sugere uma alternativa da mesma categoria, levando em conta o objetivo do usuário. A sugestão não altera o registro original. |
+| **Refeições favoritas** | Refeições salvas podem ser reutilizadas sem nova análise da IA. |
+| **Código de barras** | Consulta de produtos na base Open Food Facts para registrar seus dados nutricionais. |
 
 ### Funcionalidades implementadas
 
