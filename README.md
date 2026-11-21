@@ -119,6 +119,19 @@ O **NutrIA** é uma aplicação web para gerenciamento e acompanhamento nutricio
 
 ---
 
+## 🖼 Demonstração do sistema
+
+O repositório ainda **não contém capturas de tela** da aplicação. Os recursos visuais disponíveis são o logotipo e o mascote do projeto.
+
+<div align="center">
+
+| | | |
+| :---: | :---: | :---: |
+| <img src="public/img/Nutri_chef.png" alt="Nutri chef" width="160"> | <img src="public/img/Nutri_musc.png" alt="Nutri musculoso" width="160"> | <img src="public/img/Nutri_carteiro.png" alt="Nutri carteiro" width="160"> |
+| Nutri chef | Nutri musculoso | Nutri carteiro (usado nos e-mails) |
+
+</div>
+
 <!--
 Quando as capturas de tela forem adicionadas ao repositório, inclua-as aqui com os caminhos reais.
 Telas sugeridas: página inicial (index.php), login e cadastro, home, dashboard,
@@ -134,31 +147,34 @@ O projeto usa uma separação simples em **controllers** e **views**, sem framew
 
 ```text
 TCC_NutrIA/
-├── index.php                  # Página inicial (landing page)
-├── composer.json              # Dependências PHP (PHPMailer)
 ├── public/
 │   ├── banco/
 │   │   ├── schema.sql         # Criação do banco "nutria", das tabelas e do administrador inicial
 │   │   └── seeds.sql          # Dados de demonstração (opcional)
 │   ├── css/                   # Uma folha de estilo por página
 │   └── img/                   # Logotipos e mascote
-└── src/
-    ├── config/
-    │   ├── conexao.php        # Conexão PDO com o MySQL
-    │   └── funcoes.php        # Envio de e-mails (PHPMailer) e geração de tokens e códigos
-    ├── controllers/           # Regras de negócio, ações e integrações externas
-    └── views/                 # Páginas da aplicação
-        └── adm/               # Páginas do painel administrativo
+├── src/
+│   ├── config/
+│   │   ├── conexao.php        # Conexão PDO com o MySQL
+│   │   └── funcoes.php        # Envio de e-mails (PHPMailer) e geração de tokens e códigos
+│   ├── controllers/           # Regras de negócio, ações e integrações externas
+│   └── views/
+│       ├── adm/               # Páginas do painel administrativo
+│       └── *.php              # Demais páginas da aplicação
+├── composer.json              # Dependências PHP (PHPMailer)
+├── index.php                  # Página inicial (landing page)
+├── LICENSE
+└── README.md
 ```
 
 | Pasta | Responsabilidade |
 | --- | --- |
+| `public/banco/` | Scripts SQL. |
+| `public/css/` | Estilos de cada página. |
+| `public/img/` | Logotipos, mascote e imagens. |
 | `src/config/` | Conexão com o banco e funções compartilhadas. |
 | `src/controllers/` | Processam formulários e requisições assíncronas e integram as APIs externas. |
 | `src/views/` | Páginas exibidas ao usuário, com o JavaScript de cada tela. |
-| `public/css/` | Estilos de cada página. |
-| `public/img/` | Logotipos, mascote e imagens. |
-| `public/banco/` | Scripts SQL. |
 
 ### Principais controllers
 
