@@ -26,7 +26,6 @@ Descreva o que você comeu, e a Inteligência Artificial estima calorias e nutri
 - [Sobre o projeto](#-sobre-o-projeto)
 - [Funcionalidades](#-funcionalidades)
 - [Tecnologias utilizadas](#-tecnologias-utilizadas)
-- [Demonstração do sistema](#-demonstração-do-sistema)
 - [Arquitetura e organização](#-arquitetura-e-organização-do-projeto)
 - [Pré-requisitos](#-pré-requisitos)
 - [Instalação e configuração](#-instalação-e-configuração)
@@ -116,28 +115,6 @@ O **NutrIA** é uma aplicação web para gerenciamento e acompanhamento nutricio
 | **API da NVIDIA** | Análise nutricional e sugestão inteligente por IA. |
 | **[Open Food Facts](https://world.openfoodfacts.org/)** | Consulta de produtos por código de barras. |
 | **Google Fonts e Material Symbols** | Tipografia e ícones. |
-
----
-
-## 🖼 Demonstração do sistema
-
-O repositório ainda **não contém capturas de tela** da aplicação. Os recursos visuais disponíveis são o logotipo e o mascote do projeto.
-
-<div align="center">
-
-| | | |
-| :---: | :---: | :---: |
-| <img src="public/img/Nutri_chef.png" alt="Nutri chef" width="160"> | <img src="public/img/Nutri_musc.png" alt="Nutri musculoso" width="160"> | <img src="public/img/Nutri_carteiro.png" alt="Nutri carteiro" width="160"> |
-| Nutri chef | Nutri musculoso | Nutri carteiro (usado nos e-mails) |
-
-</div>
-
-<!--
-Quando as capturas de tela forem adicionadas ao repositório, inclua-as aqui com os caminhos reais.
-Telas sugeridas: página inicial (index.php), login e cadastro, home, dashboard,
-gerenciamento de refeições, metas, perfil, Guia de Nutrientes e painel administrativo.
-Exemplo: ![Dashboard](caminho/real/da/imagem.png)
--->
 
 ---
 
