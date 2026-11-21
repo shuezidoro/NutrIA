@@ -1,0 +1,101 @@
+/* Importa as variáveis de tema, reset, header, tabela e modals base */
+@import url('./usuarios_adm_style.css');
+
+/* =====================================================
+   ESTILOS E LARGURAS DA TABELA DE REFEIÇÕES
+===================================================== */
+
+.refeicao-descricao {
+  max-width: 280px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.users-table th:nth-child(1),
+.users-table td:nth-child(1) {
+  width: 12%;
+}
+
+.users-table th:nth-child(2),
+.users-table td:nth-child(2) {
+  width: 26%;
+}
+
+.users-table th:nth-child(3),
+.users-table td:nth-child(3) {
+  width: 15%;
+}
+
+.users-table th:nth-child(4),
+.users-table td:nth-child(4) {
+  width: 32%;
+}
+
+.users-table th:nth-child(5),
+.users-table td:nth-child(5) {
+  width: 15%;
+}
+
+/* =====================================================
+   FILTRO DE PERÍODO DE DATA (Exclusivo de Refeições)
+===================================================== */
+
+.date-range {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 7px;
+}
+
+.date-range span {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.filter-field input[type="date"] {
+  color-scheme: light;
+  cursor: pointer;
+}
+
+:root[data-theme="dark"] .filter-field input[type="date"] {
+  color-scheme: dark;
+}
+
+/* =====================================================
+   ÍCONES DO GOOGLE MATERIAL SYMBOLS NO MODAL
+===================================================== */
+
+/* Ícone de identidade do cabeçalho do modal */
+.profile-identity .material-symbols-outlined {
+  font-size: 32px;
+  color: var(--primary);
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ícones dos cards de biometria/nutrientes */
+.biometric-card .material-symbols-outlined {
+  font-size: 22px;
+  color: var(--primary);
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-right: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Transição de cor suave nos ícones ao alterar o tema */
+.material-symbols-outlined {
+  transition: color 0.25s ease;
+}
+

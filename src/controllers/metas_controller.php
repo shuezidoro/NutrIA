@@ -14,18 +14,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Captura o tipo enviado pelo formulário
     $tipo_meta_enviado = $_POST['tipo_meta'] ?? 'automatica';
 
-    // TRATAMENTO DA DIVERGÊNCIA DO ENUM: Mapeia o valor recebido para os aceitos pelo banco ('Sistema' ou 'Manual')
+    //Mapeia o valor recebido para os aceitos pelo banco ('Sistema' ou 'Manual')
     if ($tipo_meta_enviado === 'automatica' || $tipo_meta_enviado === 'Sistema') {
         $origem_meta = 'Sistema';
     } else {
         $origem_meta = 'Manual';
     }
 
-    // Coleta os valores numéricos garantindo a integridade dos dados (intval previne vazios)
-    $kcal_meta     = intval($_POST['calorias'] ?? 0);
+    // Coleta os valores numéricos garantindo a integridade dos dados
+    $kcal_meta = intval($_POST['calorias'] ?? 0);
     $proteina_meta = intval($_POST['proteina'] ?? 0);
-    $carbo_meta    = intval($_POST['carbo'] ?? 0);
-    $gordura_meta  = intval($_POST['gordura'] ?? 0);
+    $carbo_meta = intval($_POST['carbo'] ?? 0);
+    $gordura_meta = intval($_POST['gordura'] ?? 0);
 
     try {
         // Insere ou atualiza os registros de forma limpa na tabela metas_diarias
@@ -39,15 +39,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 gordura_meta = ?, 
                 origem_meta = ?,
                 data_atualizacao = CURRENT_TIMESTAMP";
-                
+
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
-            $usuario_id, $kcal_meta, $proteina_meta, $carbo_meta, $gordura_meta, $origem_meta, // Bind do INSERT
-            $kcal_meta, $proteina_meta, $carbo_meta, $gordura_meta, $origem_meta              // Bind do UPDATE
+            $usuario_id,
+            $kcal_meta,
+            $proteina_meta,
+            $carbo_meta,
+            $gordura_meta,
+            $origem_meta,
+            $kcal_meta,
+            $proteina_meta,
+            $carbo_meta,
+            $gordura_meta,
+            $origem_meta
         ]);
 
         // Redireciona com sucesso de volta para o Dashboard
-        header("Location: ../views/dashboard.php?sucesso=meta_salva");
+        header("Location: ../views/home.php?sucesso=meta_salva");
         exit;
 
     } catch (Exception $e) {
