@@ -32,7 +32,6 @@ Descreva o que você comeu, e a Inteligência Artificial estima calorias e nutri
 - [Configuração das APIs](#-configuração-das-apis)
 - [Banco de dados](#-banco-de-dados)
 - [Segurança e observações](#-segurança-e-observações)
-- [Trabalhos futuros](#-trabalhos-futuros)
 - [Autor e créditos](#-autor-e-créditos)
 
 ---
@@ -316,12 +315,6 @@ Todas as chaves estrangeiras usam `ON DELETE CASCADE`: ao excluir um usuário, s
 - **Ambiente local.** A configuração padrão do banco (`root` sem senha) serve apenas para desenvolvimento. Em produção, use um usuário próprio com senha forte.
 - **Estimativas da IA.** Os valores nutricionais gerados pela Inteligência Artificial são **estimativas** e podem variar conforme a descrição, a quantidade e o preparo dos alimentos. Eles não substituem o acompanhamento de nutricionistas ou médicos.
 - **Serviços externos.** A análise por IA, a busca por código de barras e o envio de e-mails dependem de serviços de terceiros e podem ficar indisponíveis.
-
----
-
-## 🚀 Trabalhos futuros
-
-O repositório não traz um roteiro documentado de melhorias planejadas. Por isso, esta seção não lista funcionalidades futuras. Quando houver planejamento formal, ele deve ser registrado aqui, sempre indicando que ainda **não faz parte** das funcionalidades implementadas.
 
 ---
 
