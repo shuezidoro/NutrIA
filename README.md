@@ -119,19 +119,6 @@ O **NutrIA** é uma aplicação web para gerenciamento e acompanhamento nutricio
 
 ---
 
-## 🖼 Demonstração do sistema
-
-O repositório ainda **não contém capturas de tela** da aplicação. Os recursos visuais disponíveis são o logotipo e o mascote do projeto.
-
-<div align="center">
-
-| | | |
-| :---: | :---: | :---: |
-| <img src="public/img/Nutri_chef.png" alt="Nutri chef" width="160"> | <img src="public/img/Nutri_musc.png" alt="Nutri musculoso" width="160"> | <img src="public/img/Nutri_carteiro.png" alt="Nutri carteiro" width="160"> |
-| Nutri chef | Nutri musculoso | Nutri carteiro (usado nos e-mails) |
-
-</div>
-
 <!--
 Quando as capturas de tela forem adicionadas ao repositório, inclua-as aqui com os caminhos reais.
 Telas sugeridas: página inicial (index.php), login e cadastro, home, dashboard,
