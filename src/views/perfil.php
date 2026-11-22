@@ -240,7 +240,6 @@ $totalRegistros = count($dadosPesos);
                         <select name="genero" required>
                             <option value="Masculino" <?php echo ($biometria['genero'] ?? '') === 'Masculino' ? 'selected' : ''; ?>>Masculino</option>
                             <option value="Feminino" <?php echo ($biometria['genero'] ?? '') === 'Feminino' ? 'selected' : ''; ?>>Feminino</option>
-                            <option value="Outro" <?php echo ($biometria['genero'] ?? '') === 'Outro' ? 'selected' : ''; ?>>Outro</option>
                         </select>
                     </div>
                 </div>
@@ -274,7 +273,7 @@ $totalRegistros = count($dadosPesos);
                     <label>Objetivo</label>
                     <select name="objetivo" required>
                         <option value="Perda_Peso" <?php echo ($biometria['objetivo'] ?? '') === 'Perda_Peso' ? 'selected' : ''; ?>>Perder peso</option>
-                        <option value="Manter_Saude" <?php echo ($biometria['objetivo'] ?? '') === 'Manter_Saude' ? 'selected' : ''; ?>>Manter saúde</option>
+                        <option value="Manter_Saude" <?php echo ($biometria['objetivo'] ?? '') === 'Manter_Saude' ? 'selected' : ''; ?>>Manter Peso</option>
                         <option value="Ganho_Massa" <?php echo ($biometria['objetivo'] ?? '') === 'Ganho_Massa' ? 'selected' : ''; ?>>Ganhar peso</option>
                     </select>
                 </div>
