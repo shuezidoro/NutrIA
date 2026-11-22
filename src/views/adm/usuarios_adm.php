@@ -257,7 +257,7 @@ try {
             </div>
 
             <div class="table-wrapper">
-                <table class="users-table">F
+                <table class="users-table">
                     <thead>
                         <tr>
                             <th>ID</th>
