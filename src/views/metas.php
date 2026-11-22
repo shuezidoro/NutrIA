@@ -181,7 +181,6 @@ $objetivo_legivel = $objetivos_legiveis[$objetivo] ?? str_replace('_', ' ', $obj
 
     <div class="menu-backdrop" id="menuBackdrop"></div>
 
-<<<<<<< HEAD
     <!-- ============================= -->
     <!-- HEADER                        -->
     <!-- ============================= -->
@@ -190,46 +189,6 @@ $objetivo_legivel = $objetivos_legiveis[$objetivo] ?? str_replace('_', ' ', $obj
             <div class="logo">
                 <img class="logo-claro" src="../../public/img/NutrIA_claro.svg" alt="NutrIA">
                 <img class="logo-escuro" src="../../public/img/NutrIA.svg" alt="NutrIA">
-=======
-    <div>
-        <h2>Sua Meta Calórica Recomendada por IA</h2>
-        <div><?php echo $meta_final_auto; ?> kcal</div>
-        <p>Calculado com base no seu objetivo de: <strong><?php echo str_replace('_', ' ', $objetivo); ?></strong></p>
-        <p>Macros sugeridos: Carbo: <?=$auto_carbo?>g | Prot: <?=$auto_prot?>g | Gord: <?=$auto_gord?>g</p>
-    </div>
-
-    <form action="../controllers/metas_controller.php" method="POST">
-        <input type="hidden" name="tipo_meta" value="automatica">
-        <input type="hidden" name="calorias" value="<?php echo $meta_final_auto; ?>">
-        <input type="hidden" name="proteina" value="<?php echo $auto_prot; ?>">
-        <input type="hidden" name="carbo" value="<?php echo $auto_carbo; ?>">
-        <input type="hidden" name="gordura" value="<?php echo $auto_gord; ?>">
-        <button type="submit">Aceitar e Ir para o Dashboard</button>
-    </form>
-
-    <br>
-    <a href="#" id="btnManual">Definir minhas metas</a>
-
-    <div id="sectionManual" style="display: none; margin-top: 20px;">
-        <form action="../controllers/metas_controller.php" method="POST">
-            <input type="hidden" name="tipo_meta" value="manual">
-            
-            <div>
-                <label for="icalorias_man">Meta Calórica Diária (kcal):</label>
-                <input type="number" id="icalorias_man" name="calorias" placeholder="Ex: 2200" required>
-            </div>
-            <div>
-                <label for="iprot_man">Proteínas (g):</label>
-                <input type="number" id="iprot_man" name="proteina" placeholder="Ex: 150" required>
-            </div>
-            <div>
-                <label for="icarbo_man">Carboidratos (g):</label>
-                <input type="number" id="icarbo_man" name="carbo" placeholder="Ex: 200" required>
-            </div>
-            <div>
-                <label for="igord_man">Gorduras (g):</label>
-                <input type="number" id="igord_man" name="gordura" placeholder="Ex: 70" required>
->>>>>>> ed52c55af782febf7e37094038ec6d7994096129
             </div>
         </div>
 

@@ -5,13 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/css/login_style.css">
-<<<<<<< HEAD
     <link rel="icon" type="image/svg+xml" href="../../public/img/logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-=======
->>>>>>> ed52c55af782febf7e37094038ec6d7994096129
     <title>Login - NutrIA</title>
 </head>
 
@@ -40,13 +37,8 @@
                 <p>Acesse sua conta e continue acompanhando sua alimentação, suas metas e sua evolução com NutrIA.</p>
 
 
-<<<<<<< HEAD
             </div>
         </section>
-=======
-    <p><a href="esqueci_senha.php">Esqueci minha senha</a></p>
-    <p>Não tem uma conta? <a href="cadastro.php">Cadastre-se aqui</a></p>
->>>>>>> ed52c55af782febf7e37094038ec6d7994096129
 
 
         <!-- ============================= -->
