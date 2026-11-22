@@ -1574,3 +1574,67 @@ a {
     padding: 8px 5px !important;
   }
 }
+
+/* =====================================================
+   BOTÕES DOS MODAIS (cadastro e edição): Cancelar / Salvar
+   Mesmo estilo do dashboard: grandes, arredondados, 2 colunas.
+   Fica no fim do arquivo para vencer as regras anteriores.
+===================================================== */
+#modalRefeicao .modal-buttons,
+#modalEdicao .modal-buttons {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  gap: 16px !important;
+  width: 100% !important;
+  margin: 22px 0 0 !important;
+  padding: 0 !important;
+}
+
+#modalRefeicao .modal-buttons .btn,
+#modalEdicao .modal-buttons .btn {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  min-height: 58px !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+  border-radius: 18px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+#modalRefeicao .modal-buttons .btn-enviar,
+#modalEdicao .modal-buttons .btn-enviar {
+  border: none !important;
+  box-shadow: 0 10px 22px var(--glow-btn-sm) !important;
+}
+
+#modalRefeicao .modal-buttons .btn-enviar:hover,
+#modalEdicao .modal-buttons .btn-enviar:hover {
+  box-shadow: 0 12px 26px var(--glow-btn-strong) !important;
+}
+
+#modalRefeicao .modal-buttons .btn-enviar:disabled,
+#modalEdicao .modal-buttons .btn-enviar:disabled {
+  opacity: .7 !important;
+  cursor: wait !important;
+  transform: none !important;
+}
+
+@media (max-width: 480px) {
+  #modalRefeicao .modal-buttons,
+  #modalEdicao .modal-buttons {
+    gap: 10px !important;
+  }
+
+  #modalRefeicao .modal-buttons .btn,
+  #modalEdicao .modal-buttons .btn {
+    min-height: 52px !important;
+    padding: 0 10px !important;
+    font-size: 14px !important;
+    border-radius: 16px !important;
+  }
+}

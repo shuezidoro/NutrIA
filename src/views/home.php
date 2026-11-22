@@ -302,7 +302,8 @@ function getCor($porcentagem)
     flex: 0 0 auto; 
     width: 100% !important; 
   }
-  #modalRefeicao .modal-nutrientes-refeicao { flex: 0 0 auto; width: 100%; padding: 16px; }
+  #modalRefeicao .modal-nutrientes-refeicao,
+  #modalEdicao .modal-nutrientes-refeicao { flex: 0 0 auto; width: 100%; padding: 16px; }
   .nut-lista { grid-template-columns: 1fr 1fr; gap: 12px 16px; }
   .modal-recado-nutria { 
     flex: 0 0 auto; 
@@ -652,11 +653,6 @@ function getCor($porcentagem)
     <!-- MODAL ADICIONAR REFEIÇÃO -->
     <div id="modalRefeicao" class="modal">
         <div class="modal-refeicao-layout">
-            <aside class="modal-nutrientes-refeicao" id="painelNutrientes" aria-label="Nutrientes da refeição selecionada" aria-live="polite">
-                <h4>Nutrientes da refeição</h4>
-                <p class="nut-sub" id="nutSub"></p>
-                <div id="nutConteudo"></div>
-            </aside>
             <div class="modal-conteudo">
                 <div class="modal-header" id="modalTitulo">
                     Adicionar Refeição
@@ -665,7 +661,6 @@ function getCor($porcentagem)
                 <form method="POST" action="../controllers/refeicao_controller.php" id="formRefeicao">
                     <input type="hidden" name="acao" id="barcode_acao" value="salvar">
                     <input type="hidden" name="retorno" value="home">
-                    <input type="hidden" name="refeicao_id" id="refeicao_id">
                     <input type="hidden" name="data_refeicao" value="<?php echo date('Y-m-d'); ?>">
 
                     <div class="form-group">
@@ -752,11 +747,7 @@ function getCor($porcentagem)
                     <input type="hidden" name="sodio" id="hiddenSodio">
                     <input type="hidden" name="quantidade" id="hiddenQuantidade">
 
-                    <div id="sugestaoResultado" class="sugestao-box" aria-live="polite"></div>
-
                     <div class="modal-buttons">
-                        <button type="button" class="btn btn-excluir-home" id="btnExcluirRefeicao" style="display:none;">Excluir</button>
-                        <button type="button" class="btn btn-sugestao" id="btnSugestao" style="display:none;">Sugestão inteligente</button>
                         <button type="button" class="btn btn-cancelar" onclick="fecharModal()">Cancelar</button>
                         <button type="submit" class="btn btn-enviar" id="btnSalvarBarcode">Adicionar Refeição</button>
                     </div>
@@ -766,6 +757,60 @@ function getCor($porcentagem)
             <aside class="modal-recado-nutria" role="note" aria-label="Dica para registrar sua refeição">
                 <strong>Uma dica importante!</strong>
                 <p>Informe as <b>quantidades</b> de cada alimento e especifique o <b>modo de preparo</b> (cozido, grelhado, assado ou frito). Assim, a estimativa nutricional fica mais precisa.</p>
+                <img src="../../public/img/Nutri_chef.png" alt="Mascote NutrIA" onerror="this.style.display='none'">
+            </aside>
+        </div>
+    </div>
+
+    <!-- MODAL EDITAR REFEIÇÃO (editar, excluir e sugestão inteligente) -->
+    <div id="modalEdicao" class="modal">
+        <div class="modal-refeicao-layout">
+            <aside class="modal-nutrientes-refeicao" id="painelNutrientes" aria-label="Nutrientes da refeição selecionada" aria-live="polite">
+                <h4>Nutrientes da refeição</h4>
+                <p class="nut-sub" id="nutSub"></p>
+                <div id="nutConteudo"></div>
+            </aside>
+            <div class="modal-conteudo">
+                <div class="modal-header" id="modalTituloEdicao">
+                    Editar Refeição
+                </div>
+
+                <form method="POST" action="../controllers/refeicao_controller.php" id="formEdicao">
+                    <input type="hidden" name="acao" id="edicao_acao" value="editar">
+                    <input type="hidden" name="retorno" value="home">
+                    <input type="hidden" name="refeicao_id" id="refeicao_id">
+                    <input type="hidden" name="data_refeicao" value="<?php echo date('Y-m-d'); ?>">
+
+                    <div class="form-group">
+                        <label for="tipoEdicao">Tipo de Refeição:</label>
+                        <select name="tipo_refeicao" id="tipoEdicao" required>
+                            <option value="Café da manhã">Café da Manhã</option>
+                            <option value="Almoço">Almoço</option>
+                            <option value="Café da tarde">Café da Tarde</option>
+                            <option value="Jantar">Jantar</option>
+                            <option value="Lanche">Lanche</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricaoEdicao">Descrição da Refeição:</label>
+                        <textarea name="descricao_comida" id="descricaoEdicao" placeholder="Sua refeição" required></textarea>
+                    </div>
+
+                    <div id="sugestaoResultado" class="sugestao-box" aria-live="polite"></div>
+
+                    <div class="modal-buttons">
+                        <button type="button" class="btn btn-excluir-home" id="btnExcluirRefeicao">Excluir</button>
+                        <button type="button" class="btn btn-sugestao" id="btnSugestao">Sugestão inteligente</button>
+                        <button type="button" class="btn btn-cancelar" onclick="fecharModalEdicao()">Cancelar</button>
+                        <button type="submit" class="btn btn-enviar" id="btnSalvarEdicao">Salvar</button>
+                    </div>
+                </form>
+            </div>
+
+            <aside class="modal-recado-nutria" role="note" aria-label="Dica para editar sua refeição">
+                <strong>Uma dica importante!</strong>
+                <p>Ao salvar, a NutrIA recalcula os nutrientes pela descrição. Informe as <b>quantidades</b> e o <b>modo de preparo</b> (cozido, grelhado, assado ou frito) para uma estimativa mais precisa.</p>
                 <img src="../../public/img/Nutri_chef.png" alt="Mascote NutrIA" onerror="this.style.display='none'">
             </aside>
         </div>
@@ -915,6 +960,7 @@ function getCor($porcentagem)
         })();
 
         const modal = document.getElementById('modalRefeicao');
+        const modalEdicao = document.getElementById('modalEdicao');
 
         /* ---------- Painel lateral: nutrientes da refeição ---------- */
         const METAS_HOME = <?php echo json_encode($metas); ?>;
@@ -1033,7 +1079,7 @@ function getCor($porcentagem)
 
         // Seleciona o tipo equivalente; se não achar, usa a primeira opção (nunca fica vazio)
         function selecionarTipoHome(valor) {
-            const select = document.getElementById('tipo');
+            const select = document.getElementById('tipoEdicao');
             const alvo = normalizarTipo(valor);
             let achou = false;
 
@@ -1047,47 +1093,27 @@ function getCor($porcentagem)
             if (!achou) select.selectedIndex = 0;
         }
 
-        // Deixa o modal no modo "Adicionar"
-        function prepararModalAdicao() {
-            document.getElementById('modalTitulo').textContent = 'Adicionar Refeição';
-            document.getElementById('refeicao_id').value = '';
-            document.getElementById('grupoMetodo').style.display = 'block';
-            document.getElementById('btnExcluirRefeicao').style.display = 'none';
-            document.getElementById('btnSugestao').style.display = 'none';
-            esconderNutrientesRefeicao();
+        // Modal de cadastro: só adiciona (IA, código de barras ou favoritas)
+        function abrirModal() {
+            modal.classList.add('ativo');
+        }
+
+        // Modal de edição: editar, excluir e pedir sugestão de uma refeição já salva
+        function abrirModalEdicao(id, tipo, descricao, nutrientesJson) {
+            document.getElementById('refeicao_id').value = id;
+            document.getElementById('edicao_acao').value = 'editar';
+
+            const campoDescricao = document.getElementById('descricaoEdicao');
+            campoDescricao.required = true;
+            campoDescricao.value = descricao;
+            selecionarTipoHome(tipo);
+
             const boxSug = document.getElementById('sugestaoResultado');
             boxSug.style.display = 'none';
             boxSug.replaceChildren();
-            document.getElementById('btnSalvarBarcode').textContent = 'Adicionar Refeição';
-        }
 
-        function abrirModal() {
-            prepararModalAdicao();
-            modal.classList.add('ativo');
-        }
-
-        // Abre o modal já preenchido para editar ou excluir uma refeição
-        function abrirModalEdicao(id, tipo, descricao, nutrientesJson) {
-            prepararModalAdicao();
-
-            document.getElementById('modalTitulo').textContent = 'Editar Refeição';
-            document.getElementById('refeicao_id').value = id;
-
-            // A edição sempre recalcula pela IA
-            document.getElementById('metodo_adicao').value = 'ia';
-            alterarMetodoHome();
-
-            document.getElementById('descricao').value = descricao;
-            selecionarTipoHome(tipo);
-
-            document.getElementById('barcode_acao').value = 'editar';
-            document.getElementById('grupoMetodo').style.display = 'none';
-            document.getElementById('btnExcluirRefeicao').style.display = '';
-            document.getElementById('btnSugestao').style.display = '';
-            document.getElementById('btnSalvarBarcode').textContent = 'Salvar';
             mostrarNutrientesRefeicao(tipo, nutrientesJson);
-
-            modal.classList.add('ativo');
+            modalEdicao.classList.add('ativo');
         }
 
         document.querySelectorAll('.refeicao-editavel').forEach(function (item) {
@@ -1112,9 +1138,9 @@ function getCor($porcentagem)
         document.getElementById('btnExcluirRefeicao').addEventListener('click', function () {
             if (!confirm('Tem certeza que deseja remover esta refeição? Seus macros serão recalculados.')) return;
 
-            document.getElementById('barcode_acao').value = 'excluir';
-            document.getElementById('descricao').required = false;
-            document.getElementById('formRefeicao').requestSubmit();
+            document.getElementById('edicao_acao').value = 'excluir';
+            document.getElementById('descricaoEdicao').required = false;
+            document.getElementById('formEdicao').requestSubmit();
         });
 
         // ---------- Sugestão inteligente (só lê e sugere, não altera a refeição) ----------
@@ -1195,15 +1221,38 @@ function getCor($porcentagem)
 
         function fecharModal() {
             modal.classList.remove('ativo');
-            esconderNutrientesRefeicao();
             document.getElementById('formRefeicao').reset();
             limparDadosBarcode();
             alterarMetodoHome();
         }
 
+        function fecharModalEdicao() {
+            modalEdicao.classList.remove('ativo');
+            esconderNutrientesRefeicao();
+            document.getElementById('formEdicao').reset();
+            document.getElementById('edicao_acao').value = 'editar';
+            document.getElementById('descricaoEdicao').required = true;
+            document.getElementById('refeicao_id').value = '';
+            const boxSug = document.getElementById('sugestaoResultado');
+            boxSug.style.display = 'none';
+            boxSug.replaceChildren();
+        }
+
         window.addEventListener('click', function (event) {
-            if (event.target === modal) {
-                fecharModal();
+            if (event.target === modal) fecharModal();
+            if (event.target === modalEdicao) fecharModalEdicao();
+        });
+
+        document.getElementById('formEdicao').addEventListener('submit', function () {
+            try {
+                sessionStorage.setItem('nutria_refeicoes_antes', document.querySelectorAll('.refeicao-item').length);
+                sessionStorage.setItem('nutria_acao_refeicao', document.getElementById('edicao_acao').value);
+            } catch (err) {}
+
+            const btnSalvar = document.getElementById('btnSalvarEdicao');
+            if (btnSalvar) {
+                btnSalvar.disabled = true;
+                btnSalvar.textContent = document.getElementById('edicao_acao').value === 'excluir' ? 'Excluindo...' : 'Salvando...';
             }
         });
 
